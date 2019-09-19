@@ -8,6 +8,7 @@ package com.chang.entity;
  * @Copyright 北京木联能软件股份有限公司
  */
 public class Student {
+
     private int id;
     private String name;
     private int age;
