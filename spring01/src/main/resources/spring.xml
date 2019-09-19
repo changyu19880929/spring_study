@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--<bean id="stu" class="com.chang.entity.Student">-->
+
+    <!--</bean>-->
+
+    <!--<bean id="stu1" class="com.chang.entity.Student">-->
+        <!--<property name="id" value="1"></property>-->
+        <!--<property name="name" value="畅"></property>-->
+        <!--<property name="age" value="31"></property>-->
+    <!--</bean>-->
+
+    <bean id="stu2" class="com.chang.entity.Student">
+        <property name="id" value="2"></property>
+        <property name="name">
+            <value><![CDATA[<哈哈>]]></value>
+        </property>
+        <property name="age" value="30"></property>
+    </bean>
+    <bean id="stu4" class="com.chang.entity.Student">
+        <constructor-arg name="id" value="1"></constructor-arg>
+        <constructor-arg name="name" value="zhangsan"></constructor-arg>
+        <constructor-arg name="age" value="1"></constructor-arg>
+    </bean>
+    <bean id="stu5" class="com.chang.entity.Student">
+        <constructor-arg index="0" value="3"></constructor-arg>
+        <constructor-arg index="1" value="lisi"></constructor-arg>
+        <constructor-arg index="2" value="20"></constructor-arg>
+    </bean>
+
+    <bean id="classes" class="com.chang.entity.Classes">
+        <property name="id" value="12"></property>
+        <property name="name" value="ceshi"></property>
+    </bean>
+
+    <bean id="stu6" class="com.chang.entity.Student">
+        <property name="id" value="2"></property>
+        <property name="name">
+            <value><![CDATA[<哈哈>]]></value>
+        </property>
+        <property name="age" value="30"></property>
+        <property name="classes" ref="classes"></property>
+    </bean>
+
+    <bean id="classes1" class="com.chang.entity.Classes">
+        <property name="id" value="13"></property>
+        <property name="name" value="english"></property>
+        <property name="list">
+            <list>
+                <ref bean="stu5"></ref>
+                <ref bean="stu6"></ref>
+            </list>
+        </property>
+    </bean>
+</beans>
